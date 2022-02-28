@@ -1,0 +1,34 @@
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  position: relative; /* needed for our header to have an absolute position */
+  z-index: 10;
+}
+
+#nav-text-logo {
+  font-family: 'Bungee', cursive;
+  font-size: 32px;
+  line-height: 120px; /* should match nav height */
+}
+
+#new-tweet {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+#new-tweet p {
+  margin: 0px;
+  height: auto;
+}
+
+#new-tweet i {
+  width: 100%;
+  text-align: center;
+}
