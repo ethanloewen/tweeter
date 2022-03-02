@@ -1,16 +1,11 @@
 header {
-  border: 1px solid red;
   width: 100%;
-  height: 400px; /* 400px (header) + 120px (nav) */
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgb(240, 107, 102);
   background-image: url('../images/escheresque.png');
-}
-
-#img-wrapper {
-  
 }
 
 #name-wrapper {
