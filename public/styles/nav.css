@@ -5,7 +5,7 @@ nav {
   color: #FFFFFF;
   padding-left: 1.5em;
   padding-right: 1.5em;
-  position: relative; /* needed for our header to have an absolute position */
+  position: fixed;
   z-index: 10;
 }
 

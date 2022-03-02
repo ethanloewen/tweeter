@@ -1,9 +1,11 @@
 #main-header {
   width: 100%;
-  height: 400px;
+  height: 500px;
+  padding-top: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: #e7453f;
   background-image: url('../images/escheresque.png');
 }
