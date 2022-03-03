@@ -68,21 +68,19 @@ $(document).ready(function() {
     if (rawData === null || rawData === '') {
       $('#error-block h4').html('Error: Your tweet is empty!');
       $('#error-block').slideDown();
-      $('#tri1, #tri2').css({'animation': 'fadeIn 2s'});
-      $('#tri1, #tri2').css({'opacity': 1});
+      toggleErrorIcons('show');
       return;
     }
     if (rawData.length > 140) {
       $('#error-block h4').html('Error: Your tweet has exceeded 140 characters!');
       $('#error-block').slideDown();
-      $('#tri1, #tri2').css({'animation': 'fadeIn 2s'});
-      $('#tri1, #tri2').css({'opacity': 1});
+      toggleErrorIcons('show');
       return;
     }
 
+    toggleErrorIcons('hide');
     $('#error-block').slideUp();
-    $('#tri1, #tri2').css({'opacity': 0});
-    $('#tri1, #tri2').css({'animation': 'hide 0s'});
+    
     $.post('/tweets', serializedData, () => {
       console.log(serializedData);
       //$('#tweet-form')[0].reset();
@@ -90,21 +88,30 @@ $(document).ready(function() {
     });
   });
 
-  const toggleErrorIcons = () => {
-    if ($('#tri1').is(":visible")) {
+  // state agument can be 'show' or 'hide' (string)
+  const toggleErrorIcons = (state) => {
+    if (state.toUpperCase() === 'HIDE') {
       $('#tri1, #tri2').css({'opacity': 0});
       $('#tri1, #tri2').css({'animation': 'hide 0s'});
-    } else {
+    } else if (state.toUpperCase() === "SHOW") {
       $('#tri1, #tri2').css({'animation': 'fadeIn 2s'});
       $('#tri1, #tri2').css({'opacity': 1});
+    } else {
+      console.log('Please enter "hide" or "show" as the argument');
     }
   };
 
+  if($('elemFoo').css('opacity') == 0) {
+    doSomething();
+}
 
   $('#new-tweet').click(function() {
-    toggleErrorIcons();
+    if ($(tri1).css('opacity') == 0) {
+      toggleErrorIcons('show');
+    } else {
+      toggleErrorIcons('hide');
+    }
     $('.new-tweet').slideToggle();
-    
   });
 
 });
