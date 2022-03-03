@@ -66,12 +66,17 @@ $(document).ready(function() {
     const serializedData = $('textarea').serialize();
     event.preventDefault();
     if (rawData === null || rawData === '') {
-      return alert('Your tweet is empty!');
+      $('#error-block h4').html('Error: Your tweet is empty!');
+      $('#error-block').show();
+      return;
     }
     if (rawData.length > 140) {
-      return alert('Your tweet has exceeded 140 characters!');
+      $('#error-block h4').html('Error: Your tweet has exceeded 140 characters!');
+      $('#error-block').show();
+      return;
     }
 
+    $('#error-block').hide();
     $.post('/tweets', serializedData, () => {
       console.log(serializedData);
       //$('#tweet-form')[0].reset();
