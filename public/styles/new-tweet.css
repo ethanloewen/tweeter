@@ -128,6 +128,20 @@
 #tri1, #tri2 {
   position: absolute;
   line-height: 75px;
+  color: #e7453f;
+  opacity: 0;
+  animation-delay: 0s;
+  animation: fadeIn 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 #tri1 {
