@@ -66,11 +66,16 @@ $(document).ready(function() {
 
   renderTweets(data);
 
+  //sends post request to server
   $('form').submit(function(event) {
     const serializedData = $('textarea').serialize();
     event.preventDefault();
-    jQuery.post('/tweets', serializedData);
+    $.post('/tweets', serializedData, () => {
+      console.log(serializedData);
+    });
   });
+
+  load
 
 });
 
