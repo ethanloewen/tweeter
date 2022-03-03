@@ -6,15 +6,21 @@
 
 $(document).ready(function() {
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function(obj) {
     let markup = `
     <article>
       <header>
-        <i class="fa-solid fa-user"></i>
-        <h1>${obj.user.name}</h1>
+        <img src="${obj.user.avatars}" alt="profile picture">
+        <h1>${escape(obj.user.name)}</h1>
       </header>
       <div id="tweet-body">
-        <h2>${obj.content.text}</h2>
+        <h2>${escape(obj.content.text)}</h2>
       </div>
       <footer>
         <h3>${timeago.format(obj.created_at)}</h3>

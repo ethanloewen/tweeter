@@ -59,6 +59,7 @@
 
 .tweet-container header {
   margin-left: 15px;
+  position: relative;
 }
 
 .tweet-container.fa-solid {
@@ -69,7 +70,10 @@
   display: inline-block;
   font-size: 25px;
   font-weight: 300;
-  margin-left: 5px;
+  margin-left: 10px;
+  height: 65px;
+  line-height: 65px;
+  position: absolute;
 }
 
 .tweet-container h2 {
@@ -96,4 +100,9 @@
 
 .tweet-container footer span i.fa-solid:hover {
   color: #e7453f;
+}
+
+.tweet-container header img {
+  display: inline-block;
+  margin-top: 15px;
 }
