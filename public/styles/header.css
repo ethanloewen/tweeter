@@ -11,5 +11,19 @@
 }
 
 #name-wrapper {
-  margin-top: -15px;
+  margin-top: -30px;
+}
+
+@media all and (min-width: 1024px) {
+  #main-header {
+    flex-basis: 40%;
+    padding-top: 60px;
+    height: 400px;
+    margin-left: 50px;
+    margin-right: 120px;
+    margin-top: 240px;
+  }
+  #name-wrapper {
+    margin-top: -45px;
+  }
 }

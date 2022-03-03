@@ -19,6 +19,8 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
@@ -26,4 +28,20 @@ main {
   margin-left: auto;
   margin-right: auto;
   background-color: #f4f1ec;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+@media all and (min-width: 1024px) {
+  body {
+    flex-direction: row;
+  }
+
+  .container {
+    margin-top: 240px;
+    flex-basis: 60%;
+    margin-right: 50px;
+  }
 }

@@ -111,6 +111,7 @@
   display: none;
   border: 3px solid #e7453f;
   margin-top: 15px;
+  margin-bottom: 20px;
   width: 100%;
   height: 80px;
   display: relative;
@@ -123,15 +124,6 @@
 
 #error-block i {
   display: inline-block;
-}
-
-#tri1, #tri2 {
-  position: absolute;
-  line-height: 75px;
-  color: #e7453f;
-  animation-delay: 0s;
-  animation: fadeIn 2s;
-  animation-fill-mode: forwards;
 }
 
 @keyframes fadeIn {
@@ -152,6 +144,15 @@
   }
 }
 
+#tri1, #tri2 {
+  position: absolute;
+  line-height: 75px;
+  color: #e7453f;
+  animation-delay: 0s;
+  animation: fadeIn 2s;
+  animation-fill-mode: forwards;
+}
+
 #tri1 {
   left: 10%;
 }
@@ -168,4 +169,10 @@
   margin-top: 0;
   margin-bottom: 0;
   text-align: center;
+}
+
+@media all and (min-width: 1024px) {
+  #tri1 {
+    left: 50%;
+  }
 }
