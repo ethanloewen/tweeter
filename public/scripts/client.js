@@ -34,32 +34,25 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       const $readyTweet = createTweetElement(tweet);
-      $('.tweet-container').append($readyTweet);
+      $('.tweet-container').prepend($readyTweet);
     }
   };
 
-
+  // runs a callback once tweets load
   const loadTweets = function(callback) {
     $.ajax('/tweets', { method: 'GET' })
     .then(function (tweets) {
       callback(tweets);
     });
   };
-  
+
   loadTweets(renderTweets);
 
-  // const loadLatestTweets = function() {
-  //   $.ajax('/tweets', { method: 'GET' })
-  //   .then(function (tweets) {
-  //     renderTweets(tweets);
-  //   });
-  // };
-
-  // const renderLatestTweet = function(tweets) {
-  //   latestTweet = tweets.slice(-1)[0];
-  //   const $readyTweet = createTweetElement(latestTweet);
-  //   $('.tweet-container').append($readyTweet);
-  // };
+  const renderLatestTweet = function(tweets) {
+    latestTweet = tweets[tweets.length - 1];
+    const $readyTweet = createTweetElement(latestTweet);
+    $('.tweet-container').prepend($readyTweet);
+  };
 
   //sends post request to server
   $('form').submit(function(event) {
@@ -76,7 +69,7 @@ $(document).ready(function() {
     $.post('/tweets', serializedData, () => {
       console.log(serializedData);
       //$('#tweet-form')[0].reset();
-      //renderLatestTweet();
+      loadTweets(renderLatestTweet);
     });
   });
 
