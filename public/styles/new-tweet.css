@@ -1,3 +1,7 @@
+.tweet-container {
+  margin-bottom: 15px;
+}
+
 #tweet-text {
   width: 100%;
   height: 25px;
@@ -42,12 +46,9 @@
   color: #e7453f;
 }
 
-.tweet-container {
-  margin-top: 50px;
-}
-
 .tweet-container article {
   border: 3px solid black;
+  margin-top: 50px;
 }
 
 #tweet-body {
@@ -89,7 +90,7 @@
   color: #4056A1;
 }
 
-.tweet-container:hover {
+.tweet-container article:hover {
   box-shadow: 5px 5px #4057a144;
 }
 
