@@ -1,3 +1,8 @@
+.new-tweet {
+  display: none;
+  margin-bottom: 50px;
+}
+
 .tweet-container {
   margin-bottom: 15px;
 }
@@ -48,7 +53,7 @@
 
 .tweet-container article {
   border: 3px solid black;
-  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 #tweet-body {

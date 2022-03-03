@@ -90,6 +90,23 @@ $(document).ready(function() {
     });
   });
 
+  const toggleErrorIcons = () => {
+    if ($('#tri1').is(":visible")) {
+      $('#tri1, #tri2').css({'opacity': 0});
+      $('#tri1, #tri2').css({'animation': 'hide 0s'});
+    } else {
+      $('#tri1, #tri2').css({'animation': 'fadeIn 2s'});
+      $('#tri1, #tri2').css({'opacity': 1});
+    }
+  };
+
+
+  $('#new-tweet').click(function() {
+    toggleErrorIcons();
+    $('.new-tweet').slideToggle();
+    
+  });
+
 });
 
 
