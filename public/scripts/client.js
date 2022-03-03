@@ -75,7 +75,14 @@ $(document).ready(function() {
     });
   });
 
-  load
+  const loadTweets = function() {
+    $.ajax('/tweets', { method: 'GET' })
+    .then(function (tweets) {
+      console.log('Success: ', tweets);
+    });
+  };
+
+  loadTweets();
 
 });
 
