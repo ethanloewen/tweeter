@@ -129,7 +129,6 @@
   position: absolute;
   line-height: 75px;
   color: #e7453f;
-  opacity: 0;
   animation-delay: 0s;
   animation: fadeIn 2s;
   animation-fill-mode: forwards;
@@ -141,6 +140,15 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 
