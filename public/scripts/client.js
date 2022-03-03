@@ -66,6 +66,12 @@ $(document).ready(function() {
 
   renderTweets(data);
 
+  $('form').submit(function(event) {
+    const serializedData = $('textarea').serialize();
+    event.preventDefault();
+    jQuery.post('/tweets', serializedData);
+  });
+
 });
 
 
