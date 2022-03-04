@@ -15,20 +15,36 @@ nav {
   line-height: 120px; /* should match nav height */
 }
 
-#new-tweet {
+#new-tweet-prompt {
   float: right;
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  width: 180px;
 }
 
-#new-tweet p {
+#new-tweet-prompt p {
   margin: 0px;
   height: auto;
+  position: relative;
 }
 
-#new-tweet i {
-  width: 100%;
+#new-tweet-prompt i {
+  top: 75px;
+  right: 36px;
+  width: inherit;
+  height: auto;
   text-align: center;
+  position: absolute;
+  animation: bounce .5s linear 0s infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    top: 75px;
+  }
+  100% {
+    top: 78px;
+  }
 }

@@ -105,7 +105,7 @@ $(document).ready(function() {
     doSomething();
 }
 
-  $('#new-tweet').click(function() {
+  $('#new-tweet-prompt').click(function() {
     if ($(tri1).css('opacity') == 0) {
       toggleErrorIcons('show');
     } else {
