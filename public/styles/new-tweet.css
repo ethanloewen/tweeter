@@ -67,7 +67,8 @@
 }
 
 #tweet-body h2 {
-  word-break: break-all;
+  font-size: 32px;
+  word-wrap: break-word;
 }
 
 .tweet-container header {
@@ -192,5 +193,8 @@
   }
   #error-block h4 {
     font-size: 18px;
+  }
+  #tweet-body h2 {
+    font-size: 28px;
   }
 }
