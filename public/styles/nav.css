@@ -1,7 +1,7 @@
 nav {
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
+  background-color: none;
   color: #FFFFFF;
   padding-left: 1.5em;
   padding-right: 1.5em;
@@ -35,6 +35,7 @@ nav {
   right: 36px;
   width: inherit;
   height: auto;
+  color: #4056A1;
   text-align: center;
   position: absolute;
   animation: bounce .5s linear 0s infinite alternate;
@@ -46,5 +47,14 @@ nav {
   }
   100% {
     top: 78px;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+  }
+  #new-tweet-prompt i {
+    color: #e7453f;
   }
 }
