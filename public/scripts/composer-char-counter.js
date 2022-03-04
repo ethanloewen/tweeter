@@ -8,7 +8,6 @@ $(document).ready(function() {
     } else {
       $('.counter').removeClass('red-text');
     }
-    // Change from explicit reference to .counter when I know how (this is bad practice)
     $('.counter').text(count);
   });
 });

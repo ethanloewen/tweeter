@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 $(document).ready(function() {
 
   const escape = function (str) {
@@ -37,7 +31,6 @@ $(document).ready(function() {
     return $tweet;
   };
 
-
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       const $readyTweet = createTweetElement(tweet);
@@ -45,7 +38,7 @@ $(document).ready(function() {
     }
   };
 
-  // runs a callback once tweets load
+  // run a callback once tweets load
   const loadTweets = function(callback) {
     $.ajax('/tweets', { method: 'GET' })
     .then(function (tweets) {
@@ -53,15 +46,13 @@ $(document).ready(function() {
     });
   };
 
-  loadTweets(renderTweets);
-
   const renderLatestTweet = function(tweets) {
     latestTweet = tweets[tweets.length - 1];
     const $readyTweet = createTweetElement(latestTweet);
     $('.tweet-container').prepend($readyTweet);
   };
 
-  //sends post request to server
+  // send post request to server
   $('form').submit(function(event) {
     const rawData = $('textarea').val();
     const serializedData = $('textarea').serialize();
@@ -90,7 +81,7 @@ $(document).ready(function() {
     });
   });
 
-  // state agument can be 'show' or 'hide' (string)
+  // the 'state' agument can be 'show' or 'hide' (string)
   const toggleErrorIcons = (state) => {
     if (state.toUpperCase() === 'HIDE') {
       $('#tri1, #tri2').css({'opacity': 0});
@@ -103,6 +94,7 @@ $(document).ready(function() {
     }
   };
 
+  // toggle view of the 'create new tweet' section
   $('#new-tweet-prompt').click(function() {
     if ($(tri1).css('opacity') == 0) {
       toggleErrorIcons('show');
@@ -112,6 +104,9 @@ $(document).ready(function() {
     $('.new-tweet').slideToggle();
     $('#tweet-text').focus();
   });
+
+  // function calls
+  loadTweets(renderTweets);
 
 });
 
