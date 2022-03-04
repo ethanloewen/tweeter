@@ -83,7 +83,8 @@ $(document).ready(function() {
     
     $.post('/tweets', serializedData, () => {
       console.log(serializedData);
-      //$('#tweet-form')[0].reset();
+      $('#tweet-form')[0].reset();
+      $('.counter').text(140);
       loadTweets(renderLatestTweet);
     });
   });
@@ -101,10 +102,6 @@ $(document).ready(function() {
     }
   };
 
-  if($('elemFoo').css('opacity') == 0) {
-    doSomething();
-}
-
   $('#new-tweet-prompt').click(function() {
     if ($(tri1).css('opacity') == 0) {
       toggleErrorIcons('show');
@@ -112,6 +109,7 @@ $(document).ready(function() {
       toggleErrorIcons('hide');
     }
     $('.new-tweet').slideToggle();
+    $('#tweet-text').focus();
   });
 
 });
