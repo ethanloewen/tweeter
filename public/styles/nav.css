@@ -5,7 +5,7 @@ nav {
   color: #FFFFFF;
   padding-left: 1.5em;
   padding-right: 1.5em;
-  position: absolute;
+  position: fixed;
   z-index: 10;
 }
 
@@ -24,6 +24,10 @@ nav {
   width: 180px;
 }
 
+#nav-text-logo, #new-tweet-prompt {
+  z-index: 10;
+} 
+
 #new-tweet-prompt p {
   margin: 0px;
   height: auto;
@@ -35,10 +39,18 @@ nav {
   right: 36px;
   width: inherit;
   height: auto;
-  color: #4056A1;
+  color: rgb(255, 255, 255);
   text-align: center;
   position: absolute;
   animation: bounce .5s linear 0s infinite alternate;
+}
+
+#fixed-background {
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  position: fixed;
+  z-index: 5;
 }
 
 @keyframes bounce {

@@ -9,6 +9,7 @@
   justify-content: center;
   background-color: #e7453f;
   background-image: url('../images/escheresque.png');
+  z-index: 9;
 }
 
 #name-wrapper {
