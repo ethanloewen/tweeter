@@ -18,6 +18,7 @@ $(document).ready(function() {
       <header>
         <img src="${obj.user.avatars}" alt="profile picture">
         <h1>${escape(obj.user.name)}</h1>
+        <h5>${escape(obj.user.handle)}</h5>
       </header>
       <div id="tweet-body">
         <h2>${escape(obj.content.text)}</h2>
